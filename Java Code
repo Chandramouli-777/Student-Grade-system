@@ -1,0 +1,59 @@
+import java.util.*;
+
+public class Task1{
+    public static void main(String[] args){
+        Scanner s=new Scanner(System.in);
+        System.out.print("Enter number of subjects: ");
+        int m=s.nextInt();
+
+        System.out.print("Enter number of students: ");
+        int n=s.nextInt();
+        for(int st=1;st<=n;st++){
+            System.out.println("\nStudent "+st);
+            float[] A=new float[m];
+            for(int i=0;i<m;i++){
+                System.out.print("Enter marks for Subject "+(i+1)+": ");
+                A[i]=s.nextFloat();
+            }
+            float t=0;
+            float H=A[0];
+            float L=A[0];
+            for(int i=0;i<m;i++){
+                t+=A[i];
+                if(A[i]>H){
+                    H=A[i];
+                }
+                if(A[i]<L){
+                    L=A[i];
+                }
+                if(A[i]>=90){
+                    System.out.println("Subject "+(i+1)+" Grade: A");
+                }
+                else if(A[i]>=80){
+                    System.out.println("Subject "+(i+1)+" Grade: B");
+                }
+                else if(A[i]>=70){
+                    System.out.println("Subject "+(i+1)+" Grade: C");
+                }
+                else if(A[i]>=60){
+                    System.out.println("Subject "+(i+1)+" Grade: D");
+                }
+                else if(A[i]>=50){
+                    System.out.println("Subject "+(i+1)+" Grade: E");
+                }
+                else if(A[i]>=40){
+                    System.out.println("Subject "+(i+1)+" Grade: F");
+                }
+                else{
+                    System.out.println("Subject "+(i+1)+" Grade: Fail");
+                }
+            }
+            float a=t/m;
+            System.out.println("Average Marks: "+a);
+            System.out.println("Highest Marks: "+H);
+            System.out.println("Lowest Marks: "+L);
+        }
+
+        s.close();
+    }
+}
